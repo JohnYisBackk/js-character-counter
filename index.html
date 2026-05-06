@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+    <title>Character Counter PRO</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <main class="counter-shell">
+      <section class="counter-card">
+        <div class="card-top">
+          <span class="eyebrow">Writing Tool</span>
+          <span class="status-pill" id="statusPill">Ready</span>
+        </div>
+
+        <h1>Character Counter PRO</h1>
+        <p class="subtitle">
+          Write your text, track character usage, and get instant feedback when
+          you reach the limit.
+        </p>
+
+        <div class="input-group">
+          <label for="textInput">Your text</label>
+
+          <textarea
+            id="textInput"
+            maxlength="280"
+            placeholder="Start typing something..."
+          ></textarea>
+
+          <div class="counter-row">
+            <span id="counterText">0 / 200 characters</span>
+            <span id="helperText">You can start typing.</span>
+          </div>
+
+          <div class="progress-track">
+            <div class="progress-bar" id="progressBar"></div>
+          </div>
+        </div>
+
+        <div class="actions">
+          <button class="clear-btn" id="clearBtn">Clear text</button>
+          <button class="copy-btn" id="copyBtn">Copy</button>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

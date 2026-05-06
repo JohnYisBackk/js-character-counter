@@ -1,0 +1,242 @@
+:root {
+  --bg: #101820;
+  --card: #f8efe2;
+  --card-dark: #1a2633;
+
+  --text: #101820;
+  --muted: #6f766f;
+
+  --accent: #ff6b35;
+  --accent-soft: rgba(255, 107, 53, 0.18);
+
+  --success: #2f9e44;
+  --warning: #f08c00;
+  --danger: #d9480f;
+
+  --line: rgba(16, 24, 32, 0.12);
+
+  --radius-lg: 34px;
+  --radius-md: 20px;
+
+  --shadow: 0 30px 80px rgba(0, 0, 0, 0.28);
+  --transition: 220ms ease;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body,
+button,
+textarea {
+  font-family: "Inter", sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  background:
+    linear-gradient(135deg, rgba(255, 107, 53, 0.18), transparent 35%),
+    radial-gradient(
+      circle at bottom right,
+      rgba(248, 239, 226, 0.14),
+      transparent 35%
+    ),
+    var(--bg);
+  display: grid;
+  place-items: center;
+  color: var(--text);
+}
+
+button,
+textarea {
+  border: none;
+  outline: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+.counter-shell {
+  width: min(720px, 100%);
+  padding: 20px;
+}
+
+.counter-card {
+  background-color: var(--card);
+  border-radius: var(--radius-lg);
+  padding: 34px;
+  box-shadow: var(--shadow);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 22px;
+}
+
+.eyebrow {
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+  text-transform: uppercase;
+}
+
+.status-pill {
+  background: rgba(16, 24, 32, 0.08);
+  color: var(--muted);
+  padding: 8px 12px;
+  border-radius: 999px;
+  font-size: 0.82rem;
+  font-weight: 800;
+}
+
+.status-pill.warning {
+  background: rgba(240, 140, 0, 0.14);
+  color: var(--warning);
+}
+
+.status-pill.danger {
+  background: rgba(217, 72, 15, 0.14);
+  color: var(--danger);
+}
+
+.status-pill.success {
+  background: rgba(47, 158, 68, 0.14);
+  color: var(--success);
+}
+
+h1 {
+  font-size: clamp(2.2rem, 6vw, 4rem);
+  line-height: 0.95;
+  letter-spacing: -0.07em;
+  margin-bottom: 16px;
+}
+
+.subtitle {
+  color: var(--muted);
+  line-height: 1.8;
+  max-width: 560px;
+  margin-bottom: 28px;
+}
+
+.input-group {
+  display: grid;
+  gap: 12px;
+}
+
+label {
+  font-size: 0.92rem;
+  font-weight: 800;
+}
+
+textarea {
+  min-height: 190px;
+  resize: vertical;
+  padding: 18px;
+  border-radius: var(--radius-md);
+  background: white;
+  color: var(--text);
+  border: 1px solid var(--line);
+  font-size: 1rem;
+  line-height: 1.7;
+  transition:
+    border-color var(--transition),
+    box-shadow var(--transition);
+}
+
+textarea:focus {
+  border-color: rgba(255, 107, 53, 0.45);
+  box-shadow: 0 0 0 4px var(--accent-soft);
+}
+
+.counter-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  color: var(--muted);
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.progress-track {
+  height: 10px;
+  border-radius: 999px;
+  background: rgba(16, 24, 32, 0.08);
+  overflow: hidden;
+}
+
+.progress-bar {
+  height: 100%;
+  width: 0%;
+  border-radius: inherit;
+  background: var(--success);
+  transition:
+    width var(--transition),
+    background var(--transition);
+}
+
+.progress-bar.warning {
+  background: var(--warning);
+}
+
+.progress-bar.danger {
+  background: var(--danger);
+}
+
+.actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 24px;
+  flex-wrap: wrap;
+}
+
+.clear-btn,
+.copy-btn {
+  flex: 1;
+  min-width: 150px;
+  padding: 15px 18px;
+  border-radius: 16px;
+  font-weight: 800;
+  transition:
+    transform var(--transition),
+    opacity var(--transition);
+}
+
+.clear-btn {
+  background: rgba(16, 24, 32, 0.08);
+  color: var(--text);
+}
+
+.copy-btn {
+  color: white;
+  background: var(--accent);
+}
+
+.clear-btn:hover,
+.copy-btn:hover {
+  transform: translateY(-2px);
+}
+
+.copy-btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  transform: none;
+}
+
+@media (max-width: 520px) {
+  .counter-card {
+    padding: 24px;
+  }
+
+  .actions {
+    flex-direction: column;
+  }
+}
